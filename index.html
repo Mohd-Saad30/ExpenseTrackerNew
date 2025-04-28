@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="wrapper">
+        <div id="header">
+            <div id="exp">
+                <h1>EXPENSE TRACKER</h1>
+            </div>
+        </div>
+       
+        <div id="container">
+            <div id="expenseAdding">
+                <div id="budget">
+                    <h3>Add Budget</h3>
+                    <label for="Budget">Budget</label>
+                    <input type="text" class="line" id="Budget" placeholder="Input Budget in Rs">
+                    <button class="btn" id="ADDINGBUDGET">Add Budget</button>
+                </div>
+                <div id="addExp">
+                    <h3>Add Expense</h3>
+                    <label for="title">Expensive Title:</label>
+                    <input type="text" class="line" id="title" placeholder="Enter Expense Name">
+                    <label for="date" class="line" id="date">Date:</label>
+                    <input type="date" class="line" name="mydate" id="ExpenseDate">
+                    <label for="Category" class="line">Choose a Category:</label>
+
+                    <select name="Category" id="Category">
+                      <option value="Food">Food</option>
+                      <option value="Travels">Travels</option>
+                      <option value="Education">Education</option>
+                      <option value="Clothes">Clothes</option>
+                      <option value="Electronics">Electronics Items</option>
+                      <option value="HouseHold">HouseHold Items</option>
+                      <option value="Hospital">Hospital</option>
+                      <option value="Other">Other</option>
+                    </select>
+                    <label for="Amount">Amount:</label>
+                    <input type="text" id="Amount" placeholder="Enter Amount">
+                    <button class="btn" id="AddExpense">Add Expense</button>
+                
+
+                </div>
+                <div id="reset">
+                    <button class="btn1">Reset All</button>
+                </div>
+
+
+
+            </div>
+            <div id="history">
+                <div id="title">
+                    <div id="totalBudget">TotalBudget : <p id="budgetp"></p> </div>
+                    <div id="totalExpenses">Total Expenses : <p id="Expensesp"></p> </div>
+                    <div id="budgetLeft">Budget Left : <p id="budgetLeftp"></p> </div>
+
+                </div>
+                <div id="ExpenseHistory">
+                    <h3>Expense History</h3>
+                    <div id="totalTransaction">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>S.No</th>
+                                    <th>Date</th>
+                                    <th>Expense Name</th>
+                                    <th>Category</th>
+                                    <th>Amount</th>
+                        
+                                </tr>
+                            </thead>
+                            <tbody id="table_body">
+                                <!-- <tr>
+                                    <td>1</td>
+                                    <td></td>
+                                    <td>london trip</td>
+                                    <td>Travels</td>
+                                    <td>200</td>
+                        
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>60,000</td>
+                                    <td>29</td>
+                                    <td>dsal ui</td>
+                                    <td> ;uiaw</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>60,000</td>
+                                    <td>29</td>
+                                    <td>dWD QLI </td>
+                                    <td>Q </td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>60,000</td>
+                                    <td>29</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>60,000</td>
+                                    <td>29</td>
+                                    <td></td>
+                                    <td></td>
+                        
+                                </tr> -->
+                                <!-- <tr>
+                                    <td colspan="4" id="totalBox">
+                                        <pre style="font-weight: bolder;">            Total Amount</pre>
+                                    </td>
+                                    <td></td>
+                        
+                                </tr> -->
+                        
+                        
+                            </tbody>
+                        </table>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+  <script src="./index.js"></script>    
+</body>
+</html>

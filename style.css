@@ -1,0 +1,186 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* body{
+   
+} */
+#wrapper{
+    height: 100vh;
+    width: 100vw;
+
+    
+}
+
+#header{
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-weight: bolder;
+    font-style: italic;
+    
+}
+
+#container{
+    
+    display: flex;
+    max-width: 70%;
+    margin: auto;
+    justify-content: space-evenly;
+    /* border: 2px solid black; */
+    margin-top: 30px;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: rgb(253, 252, 250);
+    background-color: rgb(241, 232, 232);
+   /* background: #000; */
+   border: none;
+   box-shadow: 0px 0px 10px #1f1f1f;
+   background: linear-gradient(#f6d6d6, #d8dbf4);
+
+}
+#expenseAdding{
+    margin: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 355px;
+    font-weight: 800;
+    /* border-style: solid;
+    border-radius: 15px;
+    border-color: rgb(253, 252, 250); */
+    /* border: 2px solid black; */
+    /* background-color: lightsalmon; */
+    /* background: linear-gradient(#e66465, #9198e5); */
+}
+#budget{
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: rgb(253, 252, 250);
+    /* border: 2px solid black; */
+    border: none;
+    box-shadow: 0px 0px 10px ;
+    gap: 8px;
+  
+}
+#addExp{
+    display: flex;
+    padding: 10px;
+    flex-direction: column; 
+    gap: 9px;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: rgb(253, 252, 250);
+    border: none;
+    box-shadow: 0px 0px 10px ;
+    /* border: 2px solid black; */
+}
+
+button{
+    font-weight: bold;
+    padding: 6px;
+    border-radius: 8px;
+}
+
+#title{
+    display: flex;
+    justify-content: space-between;
+    font-style: italic;
+    font-weight: 400;
+    
+}
+
+#history{
+    margin: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    /* width: 650px; */
+    border-style: solid;
+    border-radius: 10px;
+    border-color: rgb(253, 252, 250);
+    border: none;
+    box-shadow: 0px 0px 3px;
+    /* border: 2px solid black; */
+    /* background-color: springgreen; */
+    /* background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #cf9659); */
+    /* background-image:
+          url(firefox.png), url(bubbles.png),
+          linear-gradient(to right, rgb(30 75 115 / 100%), rgb(255 255 255 / 0%));
+        background-repeat: no-repeat, no-repeat, no-repeat;
+        background-position:
+          bottom right,
+          left,
+          right; */
+    
+
+}
+#ExpenseHistory{
+display: flex;
+flex-direction: column;
+gap: 13px;
+
+}
+table{
+    width: 630px;
+   height: 380px;
+   text-align: center;
+   /* background: #c5bbbb; */
+}
+table,th,tr{
+    border: 1px solid black;
+    border-collapse:collapse;}
+/* #totalBox td{
+    border: 1px solid black;
+    border-collapse:collapse;
+} */
+
+
+/* #totalTransaction{
+    width: 1600px;
+} */
+ .btn1{
+    width: 100%;
+    background: red;
+    color:white;
+    padding: 6px;
+    border-radius: 8px;
+
+ }
+ input{
+    border-radius: 2px;
+    padding: 2px;
+ }
+
+ #wrapper{
+        /* background-image:
+          url(firefox.png), url(bubbles.png),
+          linear-gradient(to right, rgb(30 75 115 / 100%), rgb(255 255 255 / 0%));
+        background-repeat: no-repeat, no-repeat, no-repeat;
+        background-position:
+          bottom right,
+          left,
+          right; */
+          background: linear-gradient(#eeb9b9, #cacdef);
+      
+ }
+
+ .btn{
+    border: none;
+    background-color: #454c81;
+    color: white;
+ }
+
+ .line{
+    /* border: none; */
+    border-color: #454c81;
+    
+ }
+ 
+  
