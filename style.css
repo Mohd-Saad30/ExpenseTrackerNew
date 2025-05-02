@@ -68,8 +68,11 @@
     gap: 8px;
   
 }
-#addExp{
-    display: flex;
+.hidden{
+    display: none;
+}
+.active {
+    display: flex ;
     padding: 10px;
     flex-direction: column; 
     gap: 9px;
@@ -78,8 +81,13 @@
     border-color: rgb(253, 252, 250);
     border: none;
     box-shadow: 0px 0px 10px ;
-    /* border: 2px solid black; */
+  
 }
+/* #addExp{
+    display: none;
+    /* border: 2px solid black; */
+
+ 
 
 button{
     font-weight: bold;
@@ -127,24 +135,66 @@ flex-direction: column;
 gap: 13px;
 
 }
+/* 
 table{
     width: 630px;
    height: 380px;
    text-align: center;
-   /* background: #c5bbbb; */
+   background: #c5bbbb; 
 }
 table,th,tr{
     border: 1px solid black;
-    border-collapse:collapse;}
-/* #totalBox td{
-    border: 1px solid black;
-    border-collapse:collapse;
-} */
+    border-collapse:collapse;} 
+*/
+table {
+    width: 630px;
+    /* height: 450px; */
+    border-collapse: collapse;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #454c81;
+    color: white;
+    font-weight: bold;
+}
+
+tr {
+    height: 50px; /* Fixed height for consistency */
+    /* border-bottom: 1px solid rgba(255, 255, 255, 0.69); */
+}
+
+tr:nth-child(even) {
+    background-color: #f6f6f6c7;
+}
+
+tr:hover {
+    background-color: #9e292942;
+}
+
+td {
+    font-size: 16px;
+    vertical-align: middle; /* Keeps text aligned in rows */
+    white-space: nowrap; /* Ensures content doesn't wrap */
+}
+
+.expense-row {
+    transition: all 0.3s ease-in-out;
+}
 
 
-/* #totalTransaction{
-    width: 1600px;
-} */
+
+
+
+
  .btn1{
     width: 100%;
     background: red;
@@ -190,14 +240,9 @@ table,th,tr{
  .addexpClass.active{
     display: flex;
     /* scale: 1; */
- /* } */. */
+ /* } */
 
- .active {
-    display: block; /* Or any other visible property */
-}
 
-#addexp {
-    display: none; /* Default state */
-}
+
 
   

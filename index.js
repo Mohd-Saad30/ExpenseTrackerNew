@@ -57,13 +57,10 @@ function tablework(){
 
 
 const addExp = document.getElementById("addExp");
-// Initially ensure 'addExp' is hidden
-addExp.classList.remove("active");
 
-// Event listener for when the 'EnterBudget' field is clicked (focus event)
-EnterBudget.addEventListener('focus', () => {
-    addExp.classList.add("active"); // Show the 'addExp' element
-});
+
+
+
 
 
 
@@ -73,13 +70,14 @@ if(!isNaN(EnterBudget.value) && EnterBudget.value>0){
    
     addingBudgetButton.disabled=false;
     addingBudgetButton.style.cursor="default";
-    // addexpClass.classList.add("active");
+    
+  
 
 }
 else{
     addingBudgetButton.disabled=true;
     addingBudgetButton.style.cursor="not-allowed";
-    // addexpClass.classList.remove("active");
+    
    
     
 }
@@ -94,7 +92,10 @@ addingBudgetButton.addEventListener('click', (e) => {
     budgetLeftPara.innerHTML = `${leftAmount}`
     AddExpenseButton.disabled=false;
     AddExpenseButton.style.cursor='default';
-
+    
+    
+    addExp.classList.remove("hidden"); // Removes hidden so the div becomes visible
+    addExp.classList.add("active");
     
 
     
@@ -138,6 +139,8 @@ addingBudgetButton.addEventListener('click', (e) => {
             budgetLeftPara.innerHTML = `${leftAmount}`;
             ExpensesPara.innerHTML = `${totalExpense}`;
         } else {
+            totalExpense=0;
+            leftAmount = budgetValue;
             alert("ERROR: Budget is insufficient for this expense.");
             return;
         }
