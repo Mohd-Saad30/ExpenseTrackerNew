@@ -182,5 +182,22 @@ table,th,tr{
     border-color: #454c81;
     
  }
- 
+
+ /* .addexpClass{
+    display: none;
+ }
+
+ .addexpClass.active{
+    display: flex;
+    /* scale: 1; */
+ /* } */. */
+
+ .active {
+    display: block; /* Or any other visible property */
+}
+
+#addexp {
+    display: none; /* Default state */
+}
+
   

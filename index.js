@@ -11,7 +11,6 @@ const ExpensesPara = document.getElementById("Expensesp");
 const budgetLeftPara = document.getElementById("budgetLeftp");
 const tableBody= document.getElementById('table_body');
 
-
 let budgetValue=0;
 let leftAmount=0;
 let totalExpense=0;
@@ -57,7 +56,14 @@ function tablework(){
 }
 
 
+const addExp = document.getElementById("addExp");
+// Initially ensure 'addExp' is hidden
+addExp.classList.remove("active");
 
+// Event listener for when the 'EnterBudget' field is clicked (focus event)
+EnterBudget.addEventListener('focus', () => {
+    addExp.classList.add("active"); // Show the 'addExp' element
+});
 
 
 
@@ -67,11 +73,13 @@ if(!isNaN(EnterBudget.value) && EnterBudget.value>0){
    
     addingBudgetButton.disabled=false;
     addingBudgetButton.style.cursor="default";
+    // addexpClass.classList.add("active");
 
 }
 else{
     addingBudgetButton.disabled=true;
     addingBudgetButton.style.cursor="not-allowed";
+    // addexpClass.classList.remove("active");
    
     
 }
@@ -156,6 +164,7 @@ resetall.addEventListener('click',()=>{
 
     // localStorage.removeItem("tableData");
 })
+
 
 
 
