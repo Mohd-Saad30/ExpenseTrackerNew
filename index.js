@@ -45,6 +45,7 @@ function tablework(){
     // Create a delete button
     const deleteButton = document.createElement("button");
     deleteButton.textContent = "Delete";
+    deleteButton.classList.add("remove_button")
     deleteButton.style.backgroundColor="red";
 
     function updateSerialNumbers() {

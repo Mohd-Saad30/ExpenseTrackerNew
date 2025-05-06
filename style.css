@@ -218,3 +218,16 @@ input {
     border-color: #454c81;
 
 }
+
+.remove_button{
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    text-align: center;
+    display: inline;
+
+    :hover{
+        background-color: darkred;
+    }
+}
