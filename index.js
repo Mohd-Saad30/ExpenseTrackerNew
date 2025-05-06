@@ -20,6 +20,8 @@ AddExpenseButton.disabled=true;
 AddExpenseButton.style.cursor='not-allowed';
 
 
+  
+
 
 function tablework(){
     const newRow = document.createElement("tr");
@@ -38,7 +40,29 @@ function tablework(){
 
     const amountCell = document.createElement("td")
     amountCell.textContent = `${ExpenseAmount.value}`;
+    const DeleteCell = document.createElement("td");
 
+    // Create a delete button
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete";
+    deleteButton.style.backgroundColor="red";
+
+    function updateSerialNumbers() {
+        const rows = tableBody.querySelectorAll("tr");
+        serialNumber = 1; // Reset serial number
+        rows.forEach(row => {
+          row.cells[0].textContent = serialNumber++; // Update the first cell (serial number)
+        })
+    }
+    
+    // Add an event listener to handle the delete action
+    deleteButton.addEventListener("click", () => {
+      DeleteCell.parentElement.remove(); // Removes the entire row
+      updateSerialNumbers()
+    });
+    
+    // Append the button to the cell
+    DeleteCell.appendChild(deleteButton);
     
     // Append all cells to the row
     newRow.appendChild(serialCell);
@@ -46,6 +70,7 @@ function tablework(){
     newRow.appendChild(expenseNameCell);
     newRow.appendChild(categoryCell);
     newRow.appendChild(amountCell)
+    newRow.appendChild(DeleteCell)
 
 
 
@@ -160,10 +185,16 @@ resetall.addEventListener('click',()=>{
     serialNumber=1;
     totalExpense=0;
     leftAmount = budgetValue=0;
+     budgetPara.innerHTML = `${budgetValue}`
     budgetLeftPara.innerHTML = `${leftAmount}`;
     ExpensesPara.innerHTML = `${totalExpense}`;
     AddExpenseButton.disabled=true;
     AddExpenseButton.style.cursor='not-allowed';
+    EnterBudget.value='';
+    ExpenseName.value='';
+    category.value='';
+    ExpenseDate.value='';
+    ExpenseAmount.value='';
 
     // localStorage.removeItem("tableData");
 })
