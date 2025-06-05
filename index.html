@@ -11,7 +11,7 @@
     <div id="wrapper">
         <div id="header">
             <div id="exp">
-                <h1>EXPENSE TRACKER</h1>
+                <h1 style="color: #454c81;  ">TRACKING YOUR MONTHLY EXPENSES</h1>
             </div>
         </div>
        
@@ -62,7 +62,29 @@
 
                 </div>
                 <div id="ExpenseHistory">
-                    <h3>Expense History</h3>
+                    <div>
+                        <h3>Expense History</h3>
+                       
+                        
+                        <select name="filter" id="filter">
+                                    <option value="">Select Filter</option>
+                                    <option value="date">Date</option>
+                                    <option value="category">Category</option>
+                                    </select>
+
+                         <input type="date" id="dateInput" style="display:none; margin-left:10px;" />
+                         <select name="" id="CategoryFilter" style="display:none;margin-left:10px;"   >
+                      <option value="Food">Food</option>
+                      <option value="Travels">Travels</option>
+                      <option value="Education">Education</option>
+                      <option value="Clothes">Clothes</option>
+                      <option value="Electronics">Electronics Items</option>
+                      <option value="HouseHold">HouseHold Items</option>
+                      <option value="Hospital">Hospital</option>
+                      <option value="Other">Other</option>
+                         </select>
+                    </div>
+
                     <div id="totalTransaction">
                         <table>
                             <thead>
