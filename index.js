@@ -11,6 +11,7 @@ const ExpensesPara = document.getElementById("Expensesp");
 const budgetLeftPara = document.getElementById("budgetLeftp");
 const tableBody = document.getElementById("table_body");
 const addExp = document.getElementById("addExp");
+
 //FILTER ELEMENTS 
 const filterSelect = document.getElementById('filter');
 const dateInput = document.getElementById('dateInput');
@@ -254,7 +255,7 @@ AddExpenseButton.addEventListener("click", (e) => {
   if (isNaN(ExpenseName.value)) {
     console.log(ExpenseName.value);
   } else {
-    alert("write name in alphabet ");
+    alert("Write name in Alphabet ");
     return;
   }
 
@@ -289,7 +290,7 @@ AddExpenseButton.addEventListener("click", (e) => {
    
   tablework();
   //toast
-  showToast("Expense Details  added successfully!");
+  showToast("Expense Details Added successfully!");
 });
 
 resetall.addEventListener("click", () => {
