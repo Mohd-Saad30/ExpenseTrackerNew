@@ -245,6 +245,8 @@ addingBudgetButton.addEventListener("click", (e) => {
   addExp.classList.add("active");
 
   saveDataToLocalStorage();
+//toast
+  showToast("Budget added successfully!");
 });
 
 AddExpenseButton.addEventListener("click", (e) => {
@@ -283,8 +285,10 @@ AddExpenseButton.addEventListener("click", (e) => {
     alert("ERROR: Budget is insufficient for this expense.");
     return;
   }
-
+   
   tablework();
+  //toast
+  showToast("Expense Details  added successfully!");
 });
 
 resetall.addEventListener("click", () => {
@@ -337,3 +341,29 @@ categoryFilter.addEventListener('change', function() {
   currentPage = 1;
   renderTable();
 });
+
+
+//toast
+function showToast(message, type = "success") {
+  const toast = document.createElement("div");
+  toast.textContent = message;
+
+  toast.style.cssText = `
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+    background-color: ${type === "success" ? "#4CAF50" : "#f44336"};
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  `;
+
+  document.getElementById("toast-container").appendChild(toast);
+
+  setTimeout(() => {
+    toast.remove();
+  }, 3000);
+}
+
+
