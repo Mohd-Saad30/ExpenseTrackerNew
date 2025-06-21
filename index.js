@@ -223,7 +223,7 @@ function renderPagination(filteredExpenses = expenses) {
 }
 
 EnterBudget.addEventListener("input", (e) => {
-  if (!isNaN(EnterBudget.value) && EnterBudget.value > 0) {
+  if (!isNaN(EnterBudget.value) && EnterBudget.value > 0 && EnterBudget.value!="")  {
     addingBudgetButton.disabled = false;
     addingBudgetButton.style.cursor = "default";
   } else {
@@ -352,7 +352,7 @@ function showToast(message, type = "success") {
     padding: 10px 20px;
     color: white;
     border-radius: 5px;
-    margin-top: 10px;
+    margin-top: 45px;
     font-weight: bold;
     background-color: ${type === "success" ? "#4CAF50" : "#f44336"};
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
