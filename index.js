@@ -10,31 +10,32 @@ const budgetPara = document.getElementById("budgetp");
 const ExpensesPara = document.getElementById("Expensesp");
 const budgetLeftPara = document.getElementById("budgetLeftp");
 const tableBody = document.getElementById("table_body");
+const addExp = document.getElementById("addExp");
 
-let budgetValue = 0;
-let leftAmount = 0;
+//FILTER ELEMENTS 
+const filterSelect = document.getElementById('filter');
+const dateInput = document.getElementById('dateInput');
+const categoryFilter = document.getElementById('CategoryFilter');
+
+let budgetValue  = 0;
+let leftAmount   = 0;
 let totalExpense = 0;
 let serialNumber = 1;
 
 addingBudgetButton.disabled = true;
 addingBudgetButton.style.cursor = "not-allowed";
-// ====== PAGINATION VARIABLES ====== //
-let expenses = []; // Store all expenses as objects
-let currentPage = 1;
-const rowsPerPage = 7;
-// ================================== //
-
 AddExpenseButton.disabled = true;
 AddExpenseButton.style.cursor = "not-allowed";
 
-const addExp = document.getElementById("addExp");
+//PAGINATION VARIABLES
+let expenses = [];  
+let currentPage = 1;
+const rowsPerPage = 7;
 
-// ====== FILTER ELEMENTS ====== //
-const filterSelect = document.getElementById('filter');
-const dateInput = document.getElementById('dateInput');
-const categoryFilter = document.getElementById('CategoryFilter');
 
-// ====== localStorage: SAVE DATA FUNCTION ====== //
+
+
+// localStorage: SAVE DATA FUNCTION
 function saveDataToLocalStorage() {
   localStorage.setItem("expenses", JSON.stringify(expenses));
   localStorage.setItem("budgetValue", budgetValue);
@@ -42,9 +43,9 @@ function saveDataToLocalStorage() {
   localStorage.setItem("totalExpense", totalExpense);
   localStorage.setItem("currentPage", currentPage);
 }
-// ============================================== //
 
-// ====== localStorage: LOAD DATA FUNCTION ====== //
+
+//localStorage: LOAD DATA FUNCTION 
 function loadDataFromLocalStorage() {
   const savedExpenses = localStorage.getItem("expenses");
   const savedBudgetValue = localStorage.getItem("budgetValue");
@@ -63,7 +64,7 @@ function loadDataFromLocalStorage() {
   ExpensesPara.innerHTML = `${totalExpense}`;
   renderTable();
 
-  // === HIGHLIGHTED: Enable Add Expense if budget exists ===
+  // HIGHLIGHTED: Enable Add Expense if budget exists
   if (budgetValue > 0) {
     AddExpenseButton.disabled = false;
     AddExpenseButton.style.cursor = "default";
@@ -76,7 +77,6 @@ function loadDataFromLocalStorage() {
     addExp.classList.remove("active");
   }
 }
-// ============================================== //
 
 function tablework() {
   // Store each expense as an object in expenses array
@@ -91,11 +91,11 @@ function tablework() {
   renderTable();
 }
 
-// ====== FILTER + PAGINATION SUPPORT ====== //
+// FILTER + PAGINATION SUPPORT 
 function renderTable() {
   tableBody.innerHTML = ""; // Clear table
 
-  // --- Filtering ---
+  // Filtering
   const filterType = filterSelect.value;
   const filterDate = dateInput.value;
   const filterCategoryValue = categoryFilter.value;
@@ -108,7 +108,7 @@ function renderTable() {
     filteredExpenses = expenses.filter(exp => exp.category === filterCategoryValue);
   }
 
-  // --- Pagination ---
+  // Pagination 
   const start = (currentPage - 1) * rowsPerPage;//0
   const end = start + rowsPerPage;              //7
   const pageExpenses = filteredExpenses.slice(start, end); //0-6
@@ -255,7 +255,7 @@ AddExpenseButton.addEventListener("click", (e) => {
   if (isNaN(ExpenseName.value)) {
     console.log(ExpenseName.value);
   } else {
-    alert("write name in alphabet ");
+    alert("Write name in Alphabet ");
     return;
   }
 
@@ -290,7 +290,7 @@ AddExpenseButton.addEventListener("click", (e) => {
    
   tablework();
   //toast
-  showToast("Expense Details  added successfully!");
+  showToast("Expense Details Added successfully!");
 });
 
 resetall.addEventListener("click", () => {
@@ -309,19 +309,19 @@ resetall.addEventListener("click", () => {
   ExpenseDate.value = "";
   ExpenseAmount.value = "";
 
-  // ====== RESET PAGINATION DATA ====== //
+  // RESET PAGINATION DATA 
   expenses = [];
   currentPage = 1;
   saveDataToLocalStorage();
   renderTable();
-  // =================================== //
+ 
 });
 
-// ====== INITIAL TABLE RENDER WITH LOADING FROM STORAGE ====== //
+//INITIAL TABLE RENDER WITH LOADING FROM STORAGE 
 loadDataFromLocalStorage();
-// ================================== //
 
-// ====== FILTER EVENT LISTENERS ====== //
+
+// FILTER EVENT LISTENERS 
 filterSelect.addEventListener('change', function() {
   dateInput.style.display = 'none';
   categoryFilter.style.display = 'none';
@@ -345,7 +345,7 @@ categoryFilter.addEventListener('change', function() {
 });
 
 
-//toast
+//Toast Function
 function showToast(message, type = "success") {
   const toast = document.createElement("div");
   toast.textContent = message;
