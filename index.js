@@ -16,6 +16,8 @@ let leftAmount = 0;
 let totalExpense = 0;
 let serialNumber = 1;
 
+addingBudgetButton.disabled = true;
+addingBudgetButton.style.cursor = "not-allowed";
 // ====== PAGINATION VARIABLES ====== //
 let expenses = []; // Store all expenses as objects
 let currentPage = 1;
